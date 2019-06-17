@@ -23,12 +23,6 @@ process.stdin.on('readable', function handleReadable () {
   }
 });
 process.stdin.on('end', function handleEnd () {
-  console.log('parsing json', stdinContent);
-  // var stdinOptions = JSON.parse(stdinContent);
-  // Object.assign(program, stdinOptions);
-  // launchBrowserWindow();
+  console.log('stdin content', stdinContent);
   process.nextTick(process.exit);
-});
-
-app.on('ready', function () {
 });
