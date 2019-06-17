@@ -2,11 +2,11 @@ process.on('uncaughtException', function handleUncaughtException (err) {
   throw err;
 });
 
-var app = require('electron').app;
+// var app = require('electron').app;
 
-app.on('window-all-closed', function handleWindowsClosed () {
-  app.quit();
-});
+// app.on('window-all-closed', function handleWindowsClosed () {
+//   app.quit();
+// });
 
 var stdinContent = '';
 process.stdin.setEncoding('utf8');
@@ -30,5 +30,5 @@ process.stdin.on('end', function handleEnd () {
   process.nextTick(process.exit);
 });
 
-app.on('ready', function () {
-});
+// app.on('ready', function () {
+// });
