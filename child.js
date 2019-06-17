@@ -27,8 +27,8 @@ process.stdin.on('end', function handleEnd () {
   // var stdinOptions = JSON.parse(stdinContent);
   // Object.assign(program, stdinOptions);
   // launchBrowserWindow();
+  process.nextTick(process.exit);
 });
 
 app.on('ready', function () {
-  process.exit();
 });
