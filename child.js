@@ -8,6 +8,7 @@ app.on('window-all-closed', function handleWindowsClosed () {
   app.quit();
 });
 
+var stdinContent = '';
 process.stdin.setEncoding('utf8');
 process.stdin.on('readable', function handleReadable () {
   console.log('readable occurred');
@@ -28,5 +29,6 @@ process.stdin.on('end', function handleEnd () {
   // launchBrowserWindow();
 });
 
-// app.on('ready', function () {
-// });
+app.on('ready', function () {
+  process.exit();
+});
