@@ -1,6 +1,6 @@
 var spawn = require('child_process').spawn;
 
-var child = spawn('node', ['child.js']);
+var child = spawn('electron', ['child.js']);
 child.stdout.on('readable', () => {
   while (chunk = child.stdout.read()) console.log(chunk.toString('utf8'));
 });

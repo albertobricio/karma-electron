@@ -1,8 +1,15 @@
-let input = '';
+process.on('uncaughtException', function handleUncaughtException (err) {
+  throw err;
+});
 
-setTimeout(function () {
+var app = require('electron').app;
+
+app.on('window-all-closed', function handleWindowsClosed () {
+  app.quit();
+});
+
+app.on('ready', function () {
   process.stdin.setEncoding('utf8');
-
   process.stdin.on('readable', function handleReadable () {
     console.log('readable occurred');
     // Use a loop to make sure we read all available data.
@@ -21,4 +28,4 @@ setTimeout(function () {
     // Object.assign(program, stdinOptions);
     // launchBrowserWindow();
   });
-}, 3000);
+});
